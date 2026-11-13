@@ -1,1 +1,27 @@
-/* Main Stylesheet */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F3F5F0;
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    height: 350px;
+    background-image: url("images/header.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 52px;
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
