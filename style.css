@@ -1,3 +1,4 @@
+/* General Settings */
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +8,17 @@
 body {
     background-color: #F3F5F0;
     font-family: Arial, sans-serif;
+    color: #303A32;
 }
 
+
+/* Header */
 .hero {
     height: 350px;
     background-image: url("images/header.jpg");
     background-size: cover;
     background-position: center;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,4 +29,168 @@ body {
     font-size: 52px;
     text-align: center;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* Main Layout */
+.page-layout {
+    width: min(1200px, calc(100% - 48px));
+    margin: 45px auto 70px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* Posts Section */
+.posts {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Post Card */
+.post {
+    background-color: #FFFFFF;
+    border: 1px solid #E5EAE3;
+    border-radius: 14px;
+
+    padding: 28px 30px;
+    min-height: 220px;
+
+    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.post::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background-color: #527D58;
+}
+
+
+/* Post Title */
+.post-title {
+    color: #294632;
+    font-size: 24px;
+    font-weight: 600;
+
+    padding-bottom: 15px;
+    margin-bottom: 18px;
+
+    border-bottom: 1px solid #EDF0EB;
+}
+
+
+/* Post Content */
+.post-content {
+    color: #515C53;
+    font-size: 16px;
+    line-height: 1.9;
+
+    min-height: 110px;
+}
+
+.post-content p {
+    margin-bottom: 14px;
+}
+
+
+/* Sidebar */
+.sidebar {
+    position: sticky;
+    top: 25px;
+}
+
+.sidebar-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5EAE3;
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
+}
+
+
+/* Sidebar Title */
+.sidebar-title {
+    color: #294632;
+    font-size: 21px;
+
+    padding-bottom: 18px;
+    margin-bottom: 16px;
+
+    border-bottom: 1px solid #EDF0EB;
+}
+
+
+/* Topic */
+.topic-list {
+    list-style: none;
+}
+
+.topic-link {
+    display: block;
+
+    padding: 12px 14px;
+
+    color: #435849;
+    font-size: 15px;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.topic-link:hover {
+    background-color: #EDF3EB;
+    color: #315E3A;
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 760px) {
+
+    .hero {
+        height: 260px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .page-layout {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
+        gap: 22px;
+
+        margin-top: 25px;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .post {
+        padding: 23px 22px;
+    }
+
+    .post-title {
+        font-size: 21px;
+    }
+
 }
