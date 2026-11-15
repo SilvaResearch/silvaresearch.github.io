@@ -2,19 +2,26 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Purchase &amp; Activation | Canopy Gap</title>
 
-    <meta name="description" content="Purchase Canopy Gap using Litecoin and receive your activation code by email.">
+    <meta
+        name="description"
+        content="Purchase Canopy Gap using Litecoin and receive your activation code by email.">
 
     <link rel="stylesheet" href="./style.css">
+
 </head>
+
 
 <body>
 
     <main class="purchase-container">
+
 
         <!-- Header -->
         <header class="purchase-header">
@@ -26,12 +33,77 @@
         </header>
 
 
-        <form id="purchaseForm">
+        <!-- Purchase Form -->
+        <form
+            id="purchaseForm"
+            action="https://formsubmit.co/forest.life26@yahoo.com"
+            method="POST">
+
+
+            <!-- FormSubmit Settings -->
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="New Canopy Gap Payment Request">
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table">
+
+            <input
+                type="hidden"
+                name="_next"
+                value="https://silvaresearch.github.io/purchase.html?submitted=1">
+
+            <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for submitting your Canopy Gap payment request. Your payment will be checked manually. Your 24-digit activation code will be sent to your email address after payment verification.">
+
+            <input
+                type="text"
+                name="_honey"
+                class="form-honey"
+                tabindex="-1"
+                autocomplete="off">
+
+
+            <!-- Order Information -->
+
+            <input
+                type="hidden"
+                name="Application"
+                value="Canopy Gap">
+
+            <input
+                type="hidden"
+                name="Application Version"
+                value="1.00">
+
+            <input
+                type="hidden"
+                name="Price"
+                value="2.00 USD">
+
+            <input
+                type="hidden"
+                name="Required Payment"
+                value="0.05 LTC">
+
+            <input
+                type="hidden"
+                name="Litecoin Wallet Address"
+                value="ltc1quutuswvzcsks45t02p9tr6lunvzzxlq9w3sy5k">
+
 
             <!-- Customer Information -->
+
             <h2 class="purchase-section-title">
                 Customer Information
             </h2>
+
 
             <div class="purchase-form-group">
 
@@ -51,6 +123,7 @@
 
 
             <!-- Email Warning -->
+
             <div class="email-warning">
 
                 <strong>
@@ -73,12 +146,14 @@
 
 
             <!-- Payment Information -->
+
             <h2 class="purchase-section-title">
                 Payment Information
             </h2>
 
 
             <!-- Payment Method -->
+
             <div class="payment-method">
 
                 <div class="litecoin-symbol">
@@ -86,14 +161,18 @@
                 </div>
 
                 <div>
+
                     <strong>Litecoin (LTC)</strong>
+
                     <small>Cryptocurrency Payment</small>
+
                 </div>
 
             </div>
 
 
             <!-- Price -->
+
             <div class="purchase-price-box">
 
                 <div class="purchase-price-row">
@@ -104,6 +183,7 @@
 
                 </div>
 
+
                 <div class="purchase-price-row">
 
                     <span>Price (USD)</span>
@@ -113,6 +193,7 @@
                     </strong>
 
                 </div>
+
 
                 <div class="purchase-price-row">
 
@@ -128,15 +209,20 @@
 
 
             <!-- Wallet Address -->
+
             <h2 class="purchase-section-title">
                 Litecoin Wallet Address
             </h2>
 
+
             <div class="wallet-box">
 
                 <div class="wallet-label">
+
                     Send exactly 0.05 LTC to this address:
+
                 </div>
+
 
                 <div
                     class="wallet-address"
@@ -145,6 +231,7 @@
                     ltc1quutuswvzcsks45t02p9tr6lunvzzxlq9w3sy5k
 
                 </div>
+
 
                 <button
                     type="button"
@@ -155,16 +242,19 @@
 
                 </button>
 
+
                 <span
                     class="copy-status"
                     id="copyStatus"
                     aria-live="polite">
+
                 </span>
 
             </div>
 
 
             <!-- Payment Instructions -->
+
             <div class="payment-note">
 
                 <strong>Payment Instructions</strong>
@@ -179,22 +269,39 @@
                 </p>
 
                 <p>
-                    3. Enter your transaction ID (TXID) below.
+                    3. Copy your transaction ID (TXID).
                 </p>
 
                 <p>
-                    4. Your payment will be checked manually. After
+                    4. Enter your TXID in the field below and submit
+                    your payment request.
+                </p>
+
+                <p>
+                    5. Your payment will be checked manually. After
                     confirmation, your activation code will be sent
                     to your email address.
+                </p>
+
+                <p>
+                    The required payment is 0.05 LTC. The displayed
+                    USD price is informational and is not a live
+                    cryptocurrency exchange quote.
+                </p>
+
+                <p>
+                    Never share your wallet private key or recovery phrase.
                 </p>
 
             </div>
 
 
             <!-- Transaction Information -->
+
             <h2 class="purchase-section-title">
                 Transaction Information
             </h2>
+
 
             <div class="purchase-form-group">
 
@@ -207,17 +314,26 @@
                     id="txid"
                     name="txid"
                     placeholder="Enter your Litecoin transaction ID"
+                    minlength="64"
+                    maxlength="64"
+                    pattern="[A-Fa-f0-9]{64}"
+                    title="Please enter a valid 64-character Litecoin transaction ID."
+                    autocomplete="off"
+                    spellcheck="false"
                     required>
 
             </div>
 
 
             <!-- Email Confirmation -->
+
             <div class="confirmation-box">
 
                 <input
                     type="checkbox"
                     id="emailConfirmation"
+                    name="email_confirmation"
+                    value="confirmed"
                     required>
 
                 <label for="emailConfirmation">
@@ -232,7 +348,8 @@
             </div>
 
 
-            <!-- Submit -->
+            <!-- Submit Button -->
+
             <button
                 type="submit"
                 class="purchase-submit-button">
@@ -242,25 +359,32 @@
             </button>
 
 
+            <!-- Submission Message -->
+
             <div
                 id="formMessage"
                 class="purchase-message"
-                role="alert"
+                role="status"
                 aria-live="polite">
+
             </div>
+
 
         </form>
 
 
         <!-- Footer -->
+
         <footer class="purchase-footer">
 
             <p>Forest is Life</p>
 
             <p>
+
                 <a href="./index.html">
                     Back to Home
                 </a>
+
             </p>
 
             <p>
@@ -269,12 +393,16 @@
 
         </footer>
 
+
     </main>
+
 
 
     <script>
 
+        // =================================
         // Copy Litecoin Wallet Address
+        // =================================
 
         const copyButton = document.getElementById("copyButton");
 
@@ -293,9 +421,12 @@
 
                 status.textContent = "Address copied!";
 
-            } catch (error) {
+            }
 
-                const temporaryInput = document.createElement("textarea");
+            catch (error) {
+
+                const temporaryInput =
+                    document.createElement("textarea");
 
                 temporaryInput.value = address;
 
@@ -316,24 +447,37 @@
         });
 
 
-        // Payment Request Form
 
-        document.getElementById("purchaseForm")
-            .addEventListener("submit", function (event) {
+        // =================================
+        // Submission Confirmation
+        // =================================
 
-                event.preventDefault();
+        const urlParameters =
+            new URLSearchParams(window.location.search);
 
-                const message = document.getElementById("formMessage");
+        if (urlParameters.get("submitted") === "1") {
 
-                message.className = "purchase-message error";
+            const message =
+                document.getElementById("formMessage");
 
-                message.textContent =
-                    "The payment request form is not connected to a submission service yet. " +
-                    "Your information has not been sent. Please contact the website administrator.";
+            message.className =
+                "purchase-message success";
 
-            });
+            message.textContent =
+                "Your payment request has been submitted successfully. " +
+                "Your payment will be checked manually. " +
+                "Your activation code will be sent to your email after payment verification.";
+
+            window.history.replaceState(
+                {},
+                document.title,
+                window.location.pathname
+            );
+
+        }
 
     </script>
 
 </body>
+
 </html>
