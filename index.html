@@ -4,61 +4,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forest is Life</title>
+
+    <meta name="description" content="Introducing Canopy Gap, a smartphone application for measuring forest canopy-gap geometry and topographic characteristics.">
+
+    <title>Canopy Gap | Forest is Life</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Header -->
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
     <header class="hero">
-        <h1>Forest is Life</h1>
+
+        <div class="hero-content">
+
+            <h1>Forest is Life</h1>
+
+            <p>
+                Exploring forests through science and technology
+            </p>
+
+        </div>
+
     </header>
 
 
-    <!-- Main Layout -->
+    <!-- =====================================
+         MAIN LAYOUT
+    ====================================== -->
+
     <main class="page-layout">
 
-        <!-- Posts -->
+
+        <!-- =================================
+             POSTS
+        ================================== -->
+
         <section class="posts">
 
-            <article class="post">
+            <article class="post" id="overview">
+
+
+                <!-- POST META -->
+
+                <div class="post-meta">
+
+                    <span class="post-category">
+                        FOREST TECHNOLOGY
+                    </span>
+
+                    <span class="post-date">
+                        November 2026
+                    </span>
+
+                </div>
+
+
+                <!-- POST TITLE -->
 
                 <h2 class="post-title">
-                    <!-- Post Title -->
+                    Introducing Canopy Gap
                 </h2>
 
-                <div class="post-content">
-                    <!-- Post Text -->
+
+                <!-- INTRODUCTION AND IMAGE GALLERY -->
+
+                <div class="post-intro">
+
+
+                    <!-- INTRODUCTION TEXT -->
+
+                    <div class="post-text">
+
+                        <p>
+                            <strong>Canopy Gap</strong> is a smartphone application
+                            developed for measuring the geometry and topographic
+                            characteristics of forest canopy gaps.
+                        </p>
+
+                        <p>
+                            Combining a smartphone camera, orientation sensors,
+                            and GPS, the application allows users to measure
+                            canopy-gap boundaries from a fixed observation point.
+                        </p>
+
+                        <p>
+                            It calculates gap area, maximum length and width,
+                            perimeter, slope characteristics, and geographic
+                            location.
+                        </p>
+
+                        <p>
+                            Designed as a practical field tool, Canopy Gap aims
+                            to support forest research and facilitate the
+                            collection of geometric and topographic data.
+                        </p>
+
+                    </div>
+
+
+                    <!-- APPLICATION IMAGE GALLERY -->
+
+                    <div class="app-gallery">
+
+
+                        <!-- APPLICATION INTERFACE -->
+
+                        <figure class="app-image">
+
+                            <img
+                                src="images/canopy-gap-app.png"
+                                alt="Canopy Gap Mobile Application Interface"
+                                loading="lazy"
+                            >
+
+                            <figcaption>
+                                Canopy Gap – Mobile Application
+                            </figcaption>
+
+                        </figure>
+
+
+                        <!-- 3D GAP VISUALIZATION -->
+
+                        <figure class="app-image">
+
+                            <img
+                                src="images/gap-3d-output.png"
+                                alt="Canopy Gap 3D Visualization and Measurement Results"
+                                loading="lazy"
+                            >
+
+                            <figcaption>
+                                Canopy Gap – 3D Visualization and Measurement Results
+                            </figcaption>
+
+                        </figure>
+
+
+                    </div>
+
                 </div>
+
+
+                <!-- =================================
+                     KEY FEATURES
+                ================================== -->
+
+                <section class="features" id="features">
+
+                    <h3 class="section-heading">
+                        Key Features
+                    </h3>
+
+
+                    <div class="feature-grid">
+
+
+                        <!-- FEATURE 1 -->
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                ⌖
+                            </div>
+
+                            <h4>Gap Geometry</h4>
+
+                            <p>
+                                Estimation of area, maximum length,
+                                width, and perimeter.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FEATURE 2 -->
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                ∠
+                            </div>
+
+                            <h4>Topographic Analysis</h4>
+
+                            <p>
+                                Calculation of mean slope,
+                                best-fit plane slope, and aspect.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FEATURE 3 -->
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                ◎
+                            </div>
+
+                            <h4>GPS Integration</h4>
+
+                            <p>
+                                Recording geographic coordinates,
+                                elevation, and horizontal GPS accuracy.
+                            </p>
+
+                        </div>
+
+
+                        <!-- FEATURE 4 -->
+
+                        <div class="feature-card">
+
+                            <div class="feature-icon">
+                                ↗
+                            </div>
+
+                            <h4>Flexible Measurements</h4>
+
+                            <p>
+                                4-direction, 8-direction,
+                                and unlimited measurement modes.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     MEASUREMENT APPROACH
+                ================================== -->
+
+                <section class="post-section" id="workflow">
+
+                    <h3 class="section-heading">
+                        Measurement Approach
+                    </h3>
+
+                    <p>
+                        Users stand at a fixed observation point near the
+                        center of the canopy gap and manually measure selected
+                        points along its boundary using the smartphone camera
+                        and orientation sensors.
+                    </p>
+
+                    <p>
+                        The application supports measurements on both
+                        approximately flat and sloping terrain, with
+                        configurable measurement settings.
+                    </p>
+
+                </section>
+
+
+                <!-- =================================
+                     APPLICATION SCOPE
+                ================================== -->
+
+                <div class="post-note" id="scope">
+
+                    <strong>Note:</strong>
+
+                    The application does not automatically detect canopy
+                    boundaries. The calculated gap area represents the
+                    horizontal projection of the measured boundary,
+                    not the actual three-dimensional surface area.
+
+                </div>
+
+
+                <!-- =================================
+                     POST FOOTER
+                ================================== -->
+
+                <div class="post-footer">
+
+                    <span>
+                        Forest Research
+                    </span>
+
+                    <span>
+                        Technology & Innovation
+                    </span>
+
+                </div>
+
 
             </article>
 
         </section>
 
 
-        <!-- Sidebar -->
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
         <aside class="sidebar">
+
+
+            <!-- EXPLORE CARD -->
 
             <div class="sidebar-card">
 
                 <h2 class="sidebar-title">
-                    <!-- Sidebar Title -->
+                    Explore
                 </h2>
 
                 <ul class="topic-list">
+
                     <li>
-                        <a href="#" class="topic-link">
-                            <!-- Topic Name -->
+                        <a href="#overview" class="topic-link">
+                            About Canopy Gap
                         </a>
                     </li>
+
+                    <li>
+                        <a href="#features" class="topic-link">
+                            Key Features
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#workflow" class="topic-link">
+                            Measurement Approach
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#scope" class="topic-link">
+                            Application Scope
+                        </a>
+                    </li>
+
                 </ul>
 
             </div>
 
+
+            <!-- ABOUT CARD -->
+
+            <div class="sidebar-card sidebar-about">
+
+                <h3 class="sidebar-title">
+                    Forest is Life
+                </h3>
+
+                <p>
+                    A space for sharing ideas, research,
+                    and technology in forest science.
+                </p>
+
+            </div>
+
+
         </aside>
 
+
     </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Forest is Life
+        </p>
+
+        <p>
+            Dedicated to Forest Science and Innovation
+        </p>
+
+    </footer>
+
 
 </body>
 </html>
