@@ -1,8 +1,15 @@
-/* General Settings */
+/* =========================================
+   GENERAL SETTINGS
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,63 +19,115 @@ body {
 }
 
 
-/* Header */
+/* =========================================
+   HEADER
+========================================= */
+
 .hero {
-    height: 350px;
-    background-image: url("images/header.jpg");
+
+    min-height: 330px;
+
+    background-image:
+        linear-gradient(
+            rgba(16, 39, 22, 0.42),
+            rgba(16, 39, 22, 0.55)
+        ),
+        url("images/header.jpg");
+
     background-size: cover;
     background-position: center;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-align: center;
+}
+
+.hero-content {
+    padding: 25px;
 }
 
 .hero h1 {
+
     color: white;
+
     font-size: 52px;
-    text-align: center;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.6);
+
+    letter-spacing: 1px;
+}
+
+.hero p {
+
+    color: #E7EFE6;
+
+    font-size: 16px;
+
+    margin-top: 15px;
+
+    letter-spacing: 0.5px;
 }
 
 
-/* Main Layout */
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
 .page-layout {
+
     width: min(1200px, calc(100% - 48px));
+
     margin: 45px auto 70px;
 
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 280px;
+
+    grid-template-columns:
+        minmax(0, 1fr) 280px;
+
     gap: 28px;
 
     align-items: start;
 }
 
-
-/* Posts Section */
 .posts {
+
     display: flex;
+
     flex-direction: column;
 }
 
 
-/* Post Card */
+/* =========================================
+   POST CARD
+========================================= */
+
 .post {
+
     background-color: #FFFFFF;
+
     border: 1px solid #E5EAE3;
+
     border-radius: 14px;
 
-    padding: 28px 30px;
-    min-height: 220px;
+    padding: 30px;
 
-    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
+    box-shadow:
+        0 5px 20px rgba(35, 55, 38, 0.05);
 
     position: relative;
+
     overflow: hidden;
 }
 
 .post::before {
+
     content: "";
+
     position: absolute;
 
     top: 0;
@@ -81,116 +140,640 @@ body {
 }
 
 
-/* Post Title */
-.post-title {
-    color: #294632;
-    font-size: 24px;
-    font-weight: 600;
+/* =========================================
+   POST META
+========================================= */
 
-    padding-bottom: 15px;
+.post-meta {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
     margin-bottom: 18px;
+}
+
+.post-category {
+
+    background-color: #EDF3EB;
+
+    color: #416B49;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+}
+
+.post-date {
+
+    color: #89958A;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   POST TITLE
+========================================= */
+
+.post-title {
+
+    color: #294632;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 25px;
 
     border-bottom: 1px solid #EDF0EB;
 }
 
 
-/* Post Content */
-.post-content {
+/* =========================================
+   INTRODUCTION LAYOUT
+========================================= */
+
+.post-intro {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(230px, 0.85fr);
+
+    gap: 25px;
+
+    align-items: start;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   INTRODUCTION TEXT
+========================================= */
+
+.post-text {
+
     color: #515C53;
-    font-size: 16px;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+.post-text p {
+
+    margin-bottom: 15px;
+}
+
+.post-text strong {
+
+    color: #315C3A;
+}
+
+
+/* =========================================
+   APPLICATION IMAGE GALLERY
+========================================= */
+
+.app-gallery {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.app-image {
+
+    background-color: #F3F6F1;
+
+    border: 1px solid #E2E9DF;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.app-image:hover {
+
+    border-color: #B8CDB7;
+
+    box-shadow:
+        0 5px 15px rgba(35, 55, 38, 0.07);
+}
+
+.app-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 340px;
+
+    object-fit: contain;
+
+    border-radius: 7px;
+}
+
+.app-image figcaption {
+
+    color: #68766A;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: 12px;
+
+    padding-top: 10px;
+
+    border-top: 1px solid #E1E8DE;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading {
+
+    color: #294632;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #EDF0EB;
+}
+
+
+/* =========================================
+   FEATURE SECTION
+========================================= */
+
+.features {
+
+    margin-top: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   FEATURE GRID
+========================================= */
+
+.feature-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.feature-card {
+
+    background-color: #F8FAF7;
+
+    border: 1px solid #E6ECE3;
+
+    border-radius: 11px;
+
+    padding: 19px;
+
+    transition: 0.25s ease;
+}
+
+.feature-card:hover {
+
+    background-color: #EDF3EB;
+
+    border-color: #C9DCC7;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 15px rgba(35, 55, 38, 0.06);
+}
+
+.feature-icon {
+
+    color: #527D58;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.feature-card h4 {
+
+    color: #31543A;
+
+    font-size: 15px;
+
+    margin-bottom: 9px;
+}
+
+.feature-card p {
+
+    color: #657067;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   MEASUREMENT APPROACH
+========================================= */
+
+.post-section {
+
+    margin-bottom: 28px;
+}
+
+.post-section p {
+
+    color: #515C53;
+
+    font-size: 15px;
+
     line-height: 1.9;
 
-    min-height: 110px;
-}
-
-.post-content p {
-    margin-bottom: 14px;
+    margin-bottom: 13px;
 }
 
 
-/* Sidebar */
+/* =========================================
+   APPLICATION SCOPE NOTE
+========================================= */
+
+.post-note {
+
+    background-color: #F0F5EF;
+
+    border-left: 4px solid #658A66;
+
+    border-radius: 7px;
+
+    padding: 18px 20px;
+
+    color: #536456;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.post-note strong {
+
+    color: #31583B;
+}
+
+
+/* =========================================
+   POST FOOTER
+========================================= */
+
+.post-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    border-top: 1px solid #EDF0EB;
+
+    margin-top: 28px;
+
+    padding-top: 17px;
+
+    color: #89958A;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
 .sidebar {
+
     position: sticky;
+
     top: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
 }
 
 .sidebar-card {
+
     background-color: #FFFFFF;
+
     border: 1px solid #E5EAE3;
+
     border-radius: 14px;
 
-    padding: 24px;
+    padding: 23px;
 
-    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
+    box-shadow:
+        0 5px 20px rgba(35, 55, 38, 0.05);
 }
 
 
-/* Sidebar Title */
-.sidebar-title {
-    color: #294632;
-    font-size: 21px;
+/* =========================================
+   SIDEBAR TITLE
+========================================= */
 
-    padding-bottom: 18px;
-    margin-bottom: 16px;
+.sidebar-title {
+
+    color: #294632;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    padding-bottom: 15px;
+
+    margin-bottom: 14px;
 
     border-bottom: 1px solid #EDF0EB;
 }
 
 
-/* Topic */
+/* =========================================
+   SIDEBAR LINKS
+========================================= */
+
 .topic-list {
+
     list-style: none;
 }
 
+.topic-list li {
+
+    margin-bottom: 5px;
+}
+
 .topic-link {
+
     display: block;
 
-    padding: 12px 14px;
+    padding: 12px 13px;
 
     color: #435849;
-    font-size: 15px;
+
+    font-size: 14px;
+
     text-decoration: none;
 
     border-radius: 8px;
 
     transition: 0.2s ease;
+
+    border-left: 3px solid transparent;
 }
 
 .topic-link:hover {
+
     background-color: #EDF3EB;
+
     color: #315E3A;
+
+    border-left-color: #527D58;
+
+    padding-left: 17px;
 }
 
 
-/* Mobile Responsive */
-@media (max-width: 760px) {
+/* =========================================
+   SIDEBAR ABOUT
+========================================= */
 
-    .hero {
-        height: 260px;
-    }
+.sidebar-about p {
 
-    .hero h1 {
-        font-size: 38px;
-    }
+    color: #657067;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+
+    background-color: #263C2C;
+
+    color: #D8E3D8;
+
+    text-align: center;
+
+    padding: 27px 15px;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.site-footer p:first-child {
+
+    font-weight: bold;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
 
     .page-layout {
-        width: calc(100% - 30px);
-        grid-template-columns: 1fr;
-        gap: 22px;
 
-        margin-top: 25px;
-    }
+        grid-template-columns:
+            minmax(0, 1fr) 230px;
 
-    .sidebar {
-        position: static;
+        gap: 20px;
     }
 
     .post {
-        padding: 23px 22px;
+
+        padding: 25px;
+    }
+
+    .post-intro {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .app-image img {
+
+        height: 360px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+
+    .hero {
+
+        min-height: 250px;
+    }
+
+    .hero h1 {
+
+        font-size: 38px;
+    }
+
+    .hero p {
+
+        font-size: 14px;
+    }
+
+    .page-layout {
+
+        width: calc(100% - 30px);
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        margin-top: 25px;
+
+        margin-bottom: 40px;
+    }
+
+    .post {
+
+        padding: 23px 20px;
     }
 
     .post-title {
+
+        font-size: 23px;
+    }
+
+    .post-intro {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .app-gallery {
+
+        gap: 15px;
+    }
+
+    .app-image img {
+
+        height: 350px;
+    }
+
+    .feature-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+
+        position: static;
+    }
+
+    .post-footer {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size: 33px;
+    }
+
+    .post {
+
+        padding: 20px 17px;
+    }
+
+    .post-title {
+
         font-size: 21px;
+    }
+
+    .app-image img {
+
+        height: 320px;
     }
 
 }
