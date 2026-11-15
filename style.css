@@ -25,27 +25,50 @@ body {
 
 .hero {
 
-    min-height: 330px;
+    position: relative;
 
-    background-image:
-        linear-gradient(
-            rgba(16, 39, 22, 0.42),
-            rgba(16, 39, 22, 0.55)
-        ),
-        url("images/header.jpg");
+    width: 100%;
+
+    height: 350px;
+
+    background-image: url("./images/header.jpg");
 
     background-size: cover;
-    background-position: center;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
 
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
+
+    overflow: hidden;
+
+}
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(16, 39, 22, 0.48);
+
 }
 
 .hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
     padding: 25px;
+
 }
 
 .hero h1 {
@@ -56,10 +79,10 @@ body {
 
     font-weight: 700;
 
-    text-shadow:
-        0 3px 10px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
 
     letter-spacing: 1px;
+
 }
 
 .hero p {
@@ -71,6 +94,7 @@ body {
     margin-top: 15px;
 
     letter-spacing: 0.5px;
+
 }
 
 
@@ -86,12 +110,12 @@ body {
 
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr) 280px;
+    grid-template-columns: minmax(0, 1fr) 280px;
 
     gap: 28px;
 
     align-items: start;
+
 }
 
 .posts {
@@ -99,6 +123,7 @@ body {
     display: flex;
 
     flex-direction: column;
+
 }
 
 
@@ -116,12 +141,12 @@ body {
 
     padding: 30px;
 
-    box-shadow:
-        0 5px 20px rgba(35, 55, 38, 0.05);
+    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
 
     position: relative;
 
     overflow: hidden;
+
 }
 
 .post::before {
@@ -131,12 +156,15 @@ body {
     position: absolute;
 
     top: 0;
+
     left: 0;
 
     width: 5px;
+
     height: 100%;
 
     background-color: #527D58;
+
 }
 
 
@@ -157,6 +185,7 @@ body {
     gap: 10px;
 
     margin-bottom: 18px;
+
 }
 
 .post-category {
@@ -174,6 +203,7 @@ body {
     padding: 7px 12px;
 
     border-radius: 20px;
+
 }
 
 .post-date {
@@ -181,6 +211,7 @@ body {
     color: #89958A;
 
     font-size: 13px;
+
 }
 
 
@@ -203,6 +234,7 @@ body {
     margin-bottom: 25px;
 
     border-bottom: 1px solid #EDF0EB;
+
 }
 
 
@@ -214,14 +246,14 @@ body {
 
     display: grid;
 
-    grid-template-columns:
-        minmax(0, 1fr) minmax(230px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) minmax(230px, 0.85fr);
 
     gap: 25px;
 
     align-items: start;
 
     margin-bottom: 35px;
+
 }
 
 
@@ -236,16 +268,19 @@ body {
     font-size: 15px;
 
     line-height: 1.9;
+
 }
 
 .post-text p {
 
     margin-bottom: 15px;
+
 }
 
 .post-text strong {
 
     color: #315C3A;
+
 }
 
 
@@ -260,6 +295,7 @@ body {
     flex-direction: column;
 
     gap: 17px;
+
 }
 
 .app-image {
@@ -277,14 +313,15 @@ body {
     overflow: hidden;
 
     transition: 0.25s ease;
+
 }
 
 .app-image:hover {
 
     border-color: #B8CDB7;
 
-    box-shadow:
-        0 5px 15px rgba(35, 55, 38, 0.07);
+    box-shadow: 0 5px 15px rgba(35, 55, 38, 0.07);
+
 }
 
 .app-image img {
@@ -298,6 +335,7 @@ body {
     object-fit: contain;
 
     border-radius: 7px;
+
 }
 
 .app-image figcaption {
@@ -313,6 +351,7 @@ body {
     padding-top: 10px;
 
     border-top: 1px solid #E1E8DE;
+
 }
 
 
@@ -333,6 +372,7 @@ body {
     padding-bottom: 12px;
 
     border-bottom: 1px solid #EDF0EB;
+
 }
 
 
@@ -345,21 +385,17 @@ body {
     margin-top: 25px;
 
     margin-bottom: 35px;
+
 }
-
-
-/* =========================================
-   FEATURE GRID
-========================================= */
 
 .feature-grid {
 
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 14px;
+
 }
 
 
@@ -378,6 +414,7 @@ body {
     padding: 19px;
 
     transition: 0.25s ease;
+
 }
 
 .feature-card:hover {
@@ -388,8 +425,8 @@ body {
 
     transform: translateY(-3px);
 
-    box-shadow:
-        0 5px 15px rgba(35, 55, 38, 0.06);
+    box-shadow: 0 5px 15px rgba(35, 55, 38, 0.06);
+
 }
 
 .feature-icon {
@@ -401,6 +438,7 @@ body {
     font-weight: bold;
 
     margin-bottom: 10px;
+
 }
 
 .feature-card h4 {
@@ -410,6 +448,7 @@ body {
     font-size: 15px;
 
     margin-bottom: 9px;
+
 }
 
 .feature-card p {
@@ -419,6 +458,7 @@ body {
     font-size: 13px;
 
     line-height: 1.7;
+
 }
 
 
@@ -429,6 +469,7 @@ body {
 .post-section {
 
     margin-bottom: 28px;
+
 }
 
 .post-section p {
@@ -440,11 +481,12 @@ body {
     line-height: 1.9;
 
     margin-bottom: 13px;
+
 }
 
 
 /* =========================================
-   APPLICATION SCOPE NOTE
+   APPLICATION SCOPE
 ========================================= */
 
 .post-note {
@@ -462,11 +504,13 @@ body {
     font-size: 14px;
 
     line-height: 1.8;
+
 }
 
 .post-note strong {
 
     color: #31583B;
+
 }
 
 
@@ -495,6 +539,7 @@ body {
     color: #89958A;
 
     font-size: 12px;
+
 }
 
 
@@ -513,6 +558,7 @@ body {
     flex-direction: column;
 
     gap: 20px;
+
 }
 
 .sidebar-card {
@@ -525,8 +571,8 @@ body {
 
     padding: 23px;
 
-    box-shadow:
-        0 5px 20px rgba(35, 55, 38, 0.05);
+    box-shadow: 0 5px 20px rgba(35, 55, 38, 0.05);
+
 }
 
 
@@ -547,6 +593,7 @@ body {
     margin-bottom: 14px;
 
     border-bottom: 1px solid #EDF0EB;
+
 }
 
 
@@ -557,11 +604,13 @@ body {
 .topic-list {
 
     list-style: none;
+
 }
 
 .topic-list li {
 
     margin-bottom: 5px;
+
 }
 
 .topic-link {
@@ -581,6 +630,7 @@ body {
     transition: 0.2s ease;
 
     border-left: 3px solid transparent;
+
 }
 
 .topic-link:hover {
@@ -592,6 +642,7 @@ body {
     border-left-color: #527D58;
 
     padding-left: 17px;
+
 }
 
 
@@ -606,6 +657,7 @@ body {
     font-size: 14px;
 
     line-height: 1.8;
+
 }
 
 
@@ -626,6 +678,7 @@ body {
     font-size: 13px;
 
     line-height: 1.9;
+
 }
 
 .site-footer p:first-child {
@@ -633,6 +686,7 @@ body {
     font-weight: bold;
 
     margin-bottom: 5px;
+
 }
 
 
@@ -644,15 +698,16 @@ body {
 
     .page-layout {
 
-        grid-template-columns:
-            minmax(0, 1fr) 230px;
+        grid-template-columns: minmax(0, 1fr) 230px;
 
         gap: 20px;
+
     }
 
     .post {
 
         padding: 25px;
+
     }
 
     .post-intro {
@@ -664,6 +719,7 @@ body {
     .app-image img {
 
         height: 360px;
+
     }
 
 }
@@ -677,17 +733,20 @@ body {
 
     .hero {
 
-        min-height: 250px;
+        height: 250px;
+
     }
 
     .hero h1 {
 
         font-size: 38px;
+
     }
 
     .hero p {
 
         font-size: 14px;
+
     }
 
     .page-layout {
@@ -701,16 +760,19 @@ body {
         margin-top: 25px;
 
         margin-bottom: 40px;
+
     }
 
     .post {
 
         padding: 23px 20px;
+
     }
 
     .post-title {
 
         font-size: 23px;
+
     }
 
     .post-intro {
@@ -718,26 +780,31 @@ body {
         grid-template-columns: 1fr;
 
         gap: 20px;
+
     }
 
     .app-gallery {
 
         gap: 15px;
+
     }
 
     .app-image img {
 
         height: 350px;
+
     }
 
     .feature-grid {
 
         grid-template-columns: 1fr;
+
     }
 
     .sidebar {
 
         position: static;
+
     }
 
     .post-footer {
@@ -745,6 +812,7 @@ body {
         flex-direction: column;
 
         align-items: flex-start;
+
     }
 
 }
@@ -759,21 +827,25 @@ body {
     .hero h1 {
 
         font-size: 33px;
+
     }
 
     .post {
 
         padding: 20px 17px;
+
     }
 
     .post-title {
 
         font-size: 21px;
+
     }
 
     .app-image img {
 
         height: 320px;
+
     }
 
 }
