@@ -1,1 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Purchase & Activation | Canopy Gap</title>
+
+    <meta name="description" content="Purchase Canopy Gap application using Litecoin and receive your activation code by email.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f4;
+            color: #333;
+            line-height: 1.7;
+            padding: 30px 15px;
+        }
+
+        .purchase-container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-header h1 {
+            color: #315f40;
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .page-header p {
+            color: #777;
+            font-size: 15px;
+        }
+
+        .section-title {
+            color: #315f40;
+            font-size: 19px;
+            margin: 25px 0 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            border-color: #477653;
+        }
+
+        .form-group input::placeholder {
+            color: #aaa;
+        }
+
+        /* Email Warning */
+
+        .email-warning {
+            background: #fff8e5;
+            border: 1px solid #e6c76a;
+            border-left: 5px solid #d49b19;
+            padding: 16px 18px;
+            border-radius: 7px;
+            margin: 12px 0 22px;
+            text-align: left;
+        }
+
+        .email-warning strong {
+            color: #8a5b00;
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .email-warning p {
+            color: #66552f;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Price Information */
+
+        .price-box {
+            background: #f1f6f1;
+            border: 1px solid #dce8dd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 9px 0;
+            border-bottom: 1px solid #dce5dc;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-row span {
+            color: #666;
+        }
+
+        .price-row strong {
+            color: #315f40;
+        }
+
+        .price-main {
+            font-size: 21px;
+        }
+
+        /* Payment Method */
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8f8f8;
+            border: 1px solid #e2e2e2;
+            border-radius: 7px;
+            padding: 15px;
+        }
+
+        .litecoin-symbol {
+            width: 42px;
+            height: 42px;
+            background: #345b91;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .payment-method strong {
+            color: #333;
+        }
+
+        .payment-method small {
+            display: block;
+            color: #777;
+        }
+
+        /* Wallet Address */
+
+        .wallet-box {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 18px;
+            margin: 15px 0 22px;
+        }
+
+        .wallet-label {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .wallet-address {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 14px;
+            word-break: break-all;
+            color: #333;
+            margin-bottom: 12px;
+            user-select: all;
+        }
+
+        .copy-button {
+            background: #e5ece6;
+            color: #315f40;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .copy-button:hover {
+            background: #d5e3d7;
+        }
+
+        .copy-status {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 13px;
+            color: #267344;
+        }
+
+        /* Payment Instructions */
+
+        .payment-note {
+            background: #eef3f8;
+            border-left: 4px solid #54769b;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #46596d;
+        }
+
+        /* Email Confirmation */
+
+        .confirmation-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: #f7f9f7;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 7px;
+            margin: 20px 0;
+        }
+
+        .confirmation-box input {
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .confirmation-box label {
+            font-size: 14px;
+            color: #444;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: #315f40;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #21452e;
+        }
+
+        /* Status Message */
+
+        .form-message {
+            display: none;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fff0f0;
+            border: 1px solid #e5baba;
+            color: #a33;
+        }
+
+        /* Footer */
+
+        .page-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .page-footer a {
+            color: #315f40;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px 10px;
+            }
+
+            .purchase-container {
+                padding: 23px 17px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .price-row {
+                font-size: 14px;
+            }
+
+            .wallet-address {
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="purchase-container">
+
+        <!-- Header -->
+
+        <header class="page-header">
+
+            <h1>Canopy Gap</h1>
+
+            <p>Purchase &amp; Activation</p>
+
+        </header>
+
+
+        <!-- Email -->
+
+        <form id="purchaseForm">
+
+            <h2 class="section-title">Customer Information</h2>
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email address"
+                    autocomplete="email"
+                    required>
+
+            </div>
+
+
+            <!-- Email Warning -->
+
+            <div class="email-warning">
+
+                <strong>
+                    Important: Please check your email address carefully!
+                </strong>
+
+                <p>
+                    Your 24-digit activation code will be sent to the
+                    email address you provide here after your payment
+                    has been verified.
+
+                    Make sure you enter a valid email address that
+                    you can access.
+
+                    Incorrect email addresses may prevent you from
+                    receiving your activation code.
+                </p>
+
+            </div>
+
+
+            <!-- Payment Information -->
+
+            <h2 class="section-title">
+                Payment Information
+            </h2>
+
+
+            <div class="payment-method">
+
+                <div class="litecoin-symbol">
+                    Ł
+                </div>
+
+                <div>
+                    <strong>Litecoin (LTC)</strong>
+                    <small>Cryptocurrency Payment</small>
+                </div>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="price-box">
+
+                <div class="price-row">
+
+                    <span>Application</span>
+
+                    <strong>Canopy Gap v1.00</strong>
+
+                </div>
+
+                <div class="price-row">
+
+                    <span>Price (USD)</span>
+
+                    <strong class="price-main">$2.00 USD</strong>
+
+                </div>
+
+                <div class="price-row">
+
+                    <span>Payment Amount</span>
+
+                    <strong class="price-main">0.05 LTC</strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Wallet Address -->
+
+            <h2 class="section-title">
+                Litecoin Wallet Address
+            </h2>
+
+            <div class="wallet-box">
+
+                <div class="wallet-label">
+                    Send exactly 0.05 LTC to this address:
+                </div>
+
+                <div
+                    class="wallet-address"
+                    id="walletAddress">
+
+                    ltc1quutuswvzcsks45t02p9tr6lunvzzxlq9w3sy5k
+
+                </div>
+
+                <button
+                    type="button"
+                    class="copy-button"
+                    id="copyButton">
+
+                    Copy Address
+
+                </button>
+
+                <span
+                    class="copy-status"
+                    id="copyStatus"
+                    aria-live="polite">
+                </span>
+
+            </div>
+
+
+            <!-- Instructions -->
+
+            <div class="payment-note">
+
+                <strong>Payment Instructions</strong>
+
+                <p>
+                    1. Send exactly 0.05 LTC to the wallet address above.
+                </p>
+
+                <p>
+                    2. Wait for your transaction to be broadcast to the
+                    Litecoin network.
+                </p>
+
+                <p>
+                    3. Enter your transaction ID (TXID) below.
+                </p>
+
+                <p>
+                    4. Your payment will be checked manually. After
+                    confirmation, your activation code will be sent
+                    to your email address.
+                </p>
+
+            </div>
+
+
+            <!-- Transaction ID -->
+
+            <h2 class="section-title">
+                Transaction Information
+            </h2>
+
+            <div class="form-group">
+
+                <label for="txid">
+                    Transaction ID (TXID)
+                </label>
+
+                <input
+                    type="text"
+                    id="txid"
+                    name="txid"
+                    placeholder="Enter your Litecoin transaction ID"
+                    required>
+
+            </div>
+
+
+            <!-- Email Confirmation -->
+
+            <div class="confirmation-box">
+
+                <input
+                    type="checkbox"
+                    id="emailConfirmation"
+                    required>
+
+                <label for="emailConfirmation">
+
+                    I confirm that the email address provided above
+                    is correct and accessible to me. I understand
+                    that my 24-digit activation code will be sent
+                    to this email address after payment verification.
+
+                </label>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <button
+                type="submit"
+                class="submit-button">
+
+                Submit Payment Request
+
+            </button>
+
+
+            <div
+                id="formMessage"
+                class="form-message"
+                role="alert"
+                aria-live="polite">
+            </div>
+
+        </form>
+
+
+        <!-- Footer -->
+
+        <footer class="page-footer">
+
+            <p>
+                Forest is Life
+            </p>
+
+            <p>
+                <a href="./index.html">
+                    Back to Home
+                </a>
+            </p>
+
+            <p>
+                &copy; 2026 Forest is Life. All rights reserved.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        // Copy Litecoin Wallet Address
+
+        const copyButton = document.getElementById("copyButton");
+
+        copyButton.addEventListener("click", async function () {
+
+            const address = document
+                .getElementById("walletAddress")
+                .textContent
+                .trim();
+
+            const status = document.getElementById("copyStatus");
+
+            try {
+
+                await navigator.clipboard.writeText(address);
+
+                status.textContent = "Address copied!";
+
+            } catch (error) {
+
+                const temporaryInput = document.createElement("textarea");
+
+                temporaryInput.value = address;
+
+                document.body.appendChild(temporaryInput);
+
+                temporaryInput.select();
+
+                const copied = document.execCommand("copy");
+
+                temporaryInput.remove();
+
+                status.textContent = copied
+                    ? "Address copied!"
+                    : "Please copy the address manually.";
+
+            }
+
+        });
+
+
+        // Purchase Form
+
+        document.getElementById("purchaseForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                const message = document.getElementById("formMessage");
+
+                message.className = "form-message error";
+
+                message.textContent =
+                    "The payment request form is not connected to a submission service yet. " +
+                    "Your information has not been sent. Please contact the website administrator.";
+
+            });
+
+    </script>
+
+</body>
+
+</html>
