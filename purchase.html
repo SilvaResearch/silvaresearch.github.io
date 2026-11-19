@@ -7,6 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- SEO -->
     <title>Purchase Canopy Gap | Payment &amp; Activation</title>
 
     <meta
@@ -15,27 +16,46 @@
 
     <meta name="author" content="SilvaResearch">
     <meta name="application-name" content="Canopy Gap">
+
+    <!-- Prevent Search Engine Indexing -->
     <meta name="robots" content="noindex, follow">
+
     <meta name="theme-color" content="#234331">
 
-    <link rel="canonical" href="https://silvaresearch.github.io/purchase.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Canopy Gap | SilvaResearch">
-    <meta property="og:title" content="Purchase Canopy Gap | Payment &amp; Activation">
+
+    <meta
+        property="og:site_name"
+        content="Canopy Gap | SilvaResearch">
+
+    <meta
+        property="og:title"
+        content="Purchase Canopy Gap | Payment &amp; Activation">
+
     <meta
         property="og:description"
         content="Payment instructions and activation-code request for the Canopy Gap Android application.">
-    <meta property="og:url" content="https://silvaresearch.github.io/purchase.html">
+
+    <meta
+        property="og:url"
+        content="https://silvaresearch.github.io/purchase.html">
+
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Purchase Canopy Gap | Payment &amp; Activation">
+
+    <meta
+        name="twitter:title"
+        content="Purchase Canopy Gap | Payment &amp; Activation">
+
     <meta
         name="twitter:description"
         content="Purchase Canopy Gap and request your activation code by email.">
 
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -46,7 +66,10 @@
     <main class="purchase-container">
 
 
-        <!-- Header -->
+        <!-- ================================= -->
+        <!-- Header                            -->
+        <!-- ================================= -->
+
         <header class="purchase-header">
 
             <h1>Canopy Gap</h1>
@@ -56,7 +79,10 @@
         </header>
 
 
-        <!-- Purchase Form -->
+        <!-- ================================= -->
+        <!-- Purchase Form                     -->
+        <!-- ================================= -->
+
         <form
             id="purchaseForm"
             action="https://formsubmit.co/b336c93d964a7a003ad5b96542b2d0b5"
@@ -85,6 +111,8 @@
                 name="_autoresponse"
                 value="Thank you for submitting your Canopy Gap payment request. Your payment will be checked manually. Your 24-digit activation code will be sent to your email address after payment verification.">
 
+            <!-- Honeypot Spam Protection -->
+
             <input
                 type="text"
                 name="_honey"
@@ -93,7 +121,9 @@
                 autocomplete="off">
 
 
-            <!-- Order Information -->
+            <!-- ================================= -->
+            <!-- Order Information                -->
+            <!-- ================================= -->
 
             <input
                 type="hidden"
@@ -121,7 +151,9 @@
                 value="ltc1quutuswvzcsks45t02p9tr6lunvzzxlq9w3sy5k">
 
 
-            <!-- Customer Information -->
+            <!-- ================================= -->
+            <!-- Customer Information             -->
+            <!-- ================================= -->
 
             <h2 class="purchase-section-title">
                 Customer Information
@@ -168,7 +200,9 @@
             </div>
 
 
-            <!-- Payment Information -->
+            <!-- ================================= -->
+            <!-- Payment Information               -->
+            <!-- ================================= -->
 
             <h2 class="purchase-section-title">
                 Payment Information
@@ -194,7 +228,7 @@
             </div>
 
 
-            <!-- Price -->
+            <!-- Price Information -->
 
             <div class="purchase-price-box">
 
@@ -231,7 +265,9 @@
             </div>
 
 
-            <!-- Wallet Address -->
+            <!-- ================================= -->
+            <!-- Litecoin Wallet                   -->
+            <!-- ================================= -->
 
             <h2 class="purchase-section-title">
                 Litecoin Wallet Address
@@ -276,7 +312,9 @@
             </div>
 
 
-            <!-- Payment Instructions -->
+            <!-- ================================= -->
+            <!-- Payment Instructions              -->
+            <!-- ================================= -->
 
             <div class="payment-note">
 
@@ -319,7 +357,9 @@
             </div>
 
 
-            <!-- Transaction Information -->
+            <!-- ================================= -->
+            <!-- Transaction Information          -->
+            <!-- ================================= -->
 
             <h2 class="purchase-section-title">
                 Transaction Information
@@ -348,7 +388,9 @@
             </div>
 
 
-            <!-- Email Confirmation -->
+            <!-- ================================= -->
+            <!-- Email Confirmation               -->
+            <!-- ================================= -->
 
             <div class="confirmation-box">
 
@@ -371,7 +413,9 @@
             </div>
 
 
-            <!-- Submit Button -->
+            <!-- ================================= -->
+            <!-- Submit Button                    -->
+            <!-- ================================= -->
 
             <button
                 type="submit"
@@ -396,13 +440,19 @@
         </form>
 
 
-        <!-- Footer -->
+        <!-- ================================= -->
+        <!-- Footer                            -->
+        <!-- ================================= -->
 
         <footer class="purchase-footer">
 
-            <p>Canopy Gap | Developed by SilvaResearch</p>
+            <p>
+                Canopy Gap | Developed by SilvaResearch
+            </p>
 
-            <p>Forest is Life</p>
+            <p>
+                Forest is Life
+            </p>
 
             <p>
 
@@ -418,13 +468,17 @@
 
 
             <!-- Public Visitor Counter -->
+
             <div
                 class="visitor-counter"
                 style="margin-top: 20px;">
 
-                <strong>Total Website Views</strong>
+                <strong>Total Pageviews</strong>
 
-                <div id="goatcounter-total"></div>
+                <div
+                    id="goatcounter-total"
+                    aria-live="polite">
+                </div>
 
             </div>
 
@@ -436,11 +490,11 @@
 
 
 
-    <script>
+    <!-- ================================= -->
+    <!-- Copy Litecoin Wallet Address      -->
+    <!-- ================================= -->
 
-        // =================================
-        // Copy Litecoin Wallet Address
-        // =================================
+    <script>
 
         const copyButton = document.getElementById("copyButton");
 
@@ -452,6 +506,7 @@
                 .trim();
 
             const status = document.getElementById("copyStatus");
+
 
             try {
 
@@ -483,7 +538,6 @@
             }
 
         });
-
 
 
         // =================================
@@ -526,7 +580,15 @@
 
         (function () {
 
+            var target = document.getElementById("goatcounter-total");
+
+            if (!target) return;
+
+            var attempts = 0;
+
             var timer = setInterval(function () {
+
+                attempts++;
 
                 if (
                     window.goatcounter &&
@@ -545,6 +607,14 @@
 
                 }
 
+                else if (attempts >= 100) {
+
+                    clearInterval(timer);
+
+                    target.textContent = "Counter temporarily unavailable";
+
+                }
+
             }, 100);
 
         })();
@@ -552,7 +622,10 @@
     </script>
 
 
-    <!-- GoatCounter Analytics -->
+    <!-- ================================= -->
+    <!-- GoatCounter Analytics             -->
+    <!-- ================================= -->
+
     <script
         data-goatcounter="https://silvaresearch.goatcounter.com/count"
         async
