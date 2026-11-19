@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Forest is Life | Canopy Gap</title>
 
-    <meta name="description" content="Forest is Life - Canopy Gap, a mobile application for measuring forest canopy-gap geometry and topographic characteristics.">
+    <meta
+        name="description"
+        content="Forest is Life - Canopy Gap, a mobile application for measuring forest canopy-gap geometry and topographic characteristics.">
 
     <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
@@ -356,11 +360,58 @@
                     All rights reserved.
                 </p>
 
+
+                <!-- Public Visitor Counter -->
+                <div
+                    class="visitor-counter"
+                    style="margin-top: 20px;">
+
+                    <strong>Total Website Views</strong>
+
+                    <div id="goatcounter-total"></div>
+
+                </div>
+
+
             </footer>
 
         </main>
 
     </div>
+
+
+    <!-- ================================= -->
+    <!-- GoatCounter Visitor Counter       -->
+    <!-- ================================= -->
+
+    <script>
+
+        (function () {
+
+            var timer = setInterval(function () {
+
+                if (
+                    window.goatcounter &&
+                    typeof window.goatcounter.visit_count === "function"
+                ) {
+
+                    clearInterval(timer);
+
+                    window.goatcounter.visit_count({
+
+                        append: "#goatcounter-total",
+
+                        path: "TOTAL"
+
+                    });
+
+                }
+
+            }, 100);
+
+        })();
+
+    </script>
 
 
     <!-- GoatCounter Analytics -->
@@ -370,5 +421,7 @@
         src="https://gc.zgo.at/count.js">
     </script>
 
+
 </body>
+
 </html>
